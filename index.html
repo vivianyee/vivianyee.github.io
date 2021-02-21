@@ -9,26 +9,56 @@
 body,h1,h2{font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 p {line-height: 2}
-.bgimg, .bgimg2 {
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
+  
 .classname a {
     color: #FFFFFF;
     text-decoration: none;
 }
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
 .bgimg {background-image: url("indexPic4.jpg")}
 </style>
 <body>
 
 <!-- Header / Home-->
-<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-text-white w3-center">
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
     <h1 class="w3-jumbo">Vivian Yee</h1>
     <h2>Computer Science and Applied Mathematics and Statistics Student at Stony Brook University</h2>
   </div>
-</header>
+</div>
 
 <!-- Navbar (sticky bottom) -->
 <div class="w3-bottom w3-hide-small">
@@ -60,6 +90,11 @@ p {line-height: 2}
 </div>
 
 <!-- Portfolio -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="portfolio">
   <div class="w3-content">
     <h1 class="w3-text-grey"><b>PORTFOLIO</b></h1>
@@ -69,7 +104,7 @@ p {line-height: 2}
         <img class="w3-round-large center" src="java.jpeg" style="width:80%;margin:64px 0">
       </div>
       <div class="w3-half">
-        <p><i><p><i>  <br>
+        <p><i><p><i>  <br><br>
         I have the most experience with Java programming. Some projects that I have been working on so far are: train simulations, calculating complexity models,
           auction simulations, and my personal project, a school planner. I have used many complex structures in these projects such as linked lists, arrays and stacks.
           Of course, using the four principles of object oriented programming: encapsulation, abstraction, inheritance, and polymorphism, I was able to create these
@@ -80,7 +115,7 @@ p {line-height: 2}
     <!-- PHP -->
     <div class="w3-row">
       <div class="w3-half">
-        <p><i><p><i>  <br>
+        <p><i><p><i>  <br><br>
          As I previously worked as a System Support Student Assistant in the Stony Brook IT Department, I was progarmming in PHP for their official SBUCS website.
             I worked in fixing the New Computer Science website by setting up streams directly from YouTube. I slowly worked on improving the quality of the 
             site and fixing bugs. I recursively went through the video directory where the stream videos are saved in, then stored 
@@ -98,7 +133,7 @@ p {line-height: 2}
         <img class="w3-round-large center" src="goldaward.jpg" style="width:80%;margin:64px 0">
       </div>
       <div class="w3-half">
-        <p><i><p><i>  <br>
+        <p><i><p><i>  <br><br>
         I earned a Gold Award in the year 2018 from Greater Girl Scouts of New York. The Gold Award is the highest award a girl scout can earn. 
           It is given to those who have made a project that has made a long lasting impact on the community. Being a high school senior and having 
           some interest in computer science, I decided to make a website spreading awareness of bullying. I have presented it to elementary school 
@@ -109,7 +144,7 @@ p {line-height: 2}
     <!-- Girls Who Code -->
     <div class="w3-row">
       <div class="w3-half">
-        <p><i><p><i> <br>
+        <p><i><p><i> <br><br>
          I attended the Girls Who Code Summer Immersion Program in the year 2017 with IBM. The Girls Who Code Summer Immersion Program is a seven week 
           introductory computer science program, where girls learn about web designing, version control, and are exposed to tech jobs. Although I was 
           afraid to meet new people and explore the tech world, Girls Who Code exposed me to different cultures. I made new friends and made a group who 
@@ -117,16 +152,20 @@ p {line-height: 2}
         </i></p></i></p>
       </div>
       <div class="w3-half">
-        <p><b><i class="fa fa-user w3-margin-right"></i>Girls Who Code</b></p>
+        <img class="w3-round-large center" src="girlswhocode.jpg" style="width:80%;margin:64px 0">
       </div>
     </div>
   </div>
 </div>
   
 <!-- Wedding information -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PASSIONS</span>
+  </div>
+</div>
 <div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="passions">
   <div class="w3-content">
-    <h1 class="w3-text-grey"><b>PASSIONS</b></h1>
     <h2 class="w3-text-grey"><b>ART</b></h2>
     <div class="w3-row-padding w3-center">
       <div class="w3-col m3">
@@ -152,7 +191,7 @@ p {line-height: 2}
       </div>
 
       <div class="w3-col m3">
-        <img src="ice.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+        <img src="IMG_0843.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
       </div>
 
       <div class="w3-col m3">
@@ -174,7 +213,7 @@ p {line-height: 2}
       </div>
 
       <div class="w3-col m3">
-        <img src="FB_IMG_1526381083451.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+        <img src="FB_IMG_1526381083451s.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
       </div>
 
       <div class="w3-col m3">
