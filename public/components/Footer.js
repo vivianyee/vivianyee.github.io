@@ -73,7 +73,7 @@ export default function Footer() {
               bottom: "30px",
             }}
             src={
-              !hoverFoot
+              !hoverFoot && pathToAnimation[currentTab]
                 ? require(`../animation/${pathToAnimation[currentTab]}/${pathToAnimation[currentTab]}.00${image}.png`)
                 : require(`../animation/click.png`)
             }
