@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@300&display=swap');
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.css-dev-only-do-not-override-diro6f {
+  font-family: 'Noto Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+color:white;}
+
+.app-subheading {
+	color: white;
+	font-size: 2em;
+  cursor: pointer; 
+}
+
+.start {
+  white-space: pre-line;
+}

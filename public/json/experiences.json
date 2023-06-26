@@ -1,0 +1,34 @@
+{
+    "selections": [
+        {
+            "name": "ROCKET",
+            "dataName": "ROCKET MORTGAGE",
+            "url": "rocket-mortgage",
+            "date": "JUNE 2022 - PRESENT",
+            "position": "ASSOCIATE SOFTWARE ENGINEER",
+            "summmary": "CURRENTLY WORKING AS AN ASSOCIATE SOFTWARE ENGINEER AT ROCKET MORTGAGE",
+            "tech": "ANGULAR, JAVASCRIPT, TYPESCRIPT",
+            "image": "experiences/rocket-mortgage.png",
+            "description": [
+                "Currently engaged in front-end development of the portal for our brokerage partners using Angular. Enhances Rocket`s partner portal homepage by adding 3+ web components.",
+                "Utilizes Jasmine and Cypress for end to end testing on front-end code using TypeScript, delivers and deploys code through CircleCI pipeline and Hal and goes 2-3 thorough code reviews every week.",
+                "Contributes to all of RocketProTPO website`s benefits, programs, and homepage using WordPress and has increased the traffic of the site by up to 68,000 visitors a month."
+            ]
+        },
+        {
+            "name": "BETTER",
+            "dataName": "BETTER.COM",
+            "url": "better",
+            "date": "FEBRURARY 2022 - APRIL 2022 & JUNE 2021 - AUGUST",
+            "position": "SOFTWARE ENGINEER & INTERN",
+            "summmary": "PREVIOUSLY WORKED AS AN INTERN FOR BETTER AND RETURNED AFTER COLLEGE",
+            "tech": "REACT, JAVASCRIPT, TYPESCRIPT",
+            "image": "experiences/better.png",
+            "description": [
+                "Collaborated with a group of 5 people in the Collateral Insurance team and Homeownership pod to brainstorm ways to build a more efficient and quick way for homeowners to secure their property. ",
+                "Worked on front-end development of Better`s homeowners insurance business or known as Better Cover which uses clients’ data to calculate and surface up to 5 insurance quotes in a consistent web experience.",
+                "Reduced restrictions on service eligibility by allowing customers whose chosen property type is investment or second homes to have access to Better Cover, increasing visibility by 63%."
+            ]
+        }
+    ]
+}
