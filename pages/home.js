@@ -19,6 +19,7 @@ export default function TitleScreen() {
       <div style={{ width: "90%" }}>
         {subHeadings.map((heading) => (
           <Link
+            key={heading.path}
             href={heading.path}
             style={{ textDecoration: "none", color: "black" }}
           >

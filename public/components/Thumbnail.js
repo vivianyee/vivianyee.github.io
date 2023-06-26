@@ -60,7 +60,7 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
           <h3 style={{ marginBottom: "10px" }}>CHOOSE YOUR {title}</h3>
           <Row className="center" style={{ width: "100%", padding: "25px 0" }}>
             {selectionData.map((data) => (
-              <Col span={col} className="center">
+              <Col span={col} className="center" key={data.url}>
                 <Link
                   href={`/${selection}/${data.url}`}
                   style={{ textDecoration: "none", color: "black" }}

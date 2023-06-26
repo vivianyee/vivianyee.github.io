@@ -28,6 +28,7 @@ function NavBar() {
           <Row style={{ width: "80%", padding: "20px 0" }}>
             {subHeadings.map((heading) => (
               <Col
+                key={heading.title}
                 className="center"
                 style={{
                   alignItems: "center",
