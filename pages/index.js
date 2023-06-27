@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>VIVIAN YEE</title>
+        <title>Vivian Yee</title>
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
       <div

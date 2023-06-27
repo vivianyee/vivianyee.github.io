@@ -22,9 +22,9 @@ export default function Description({ selectionData }) {
         }}
         href={"./"}
       >
-        <motion.h5 whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} style={{margin:0}}>
+        <motion.h3 whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} style={{margin:0}}>
           &#60; BACK
-        </motion.h5>
+        </motion.h3>
       </Link>
       <div
         style={{
