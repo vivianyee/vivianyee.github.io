@@ -16,16 +16,17 @@ export default function About() {
           width: "75%",
         }}
       >
-        <h1>Vivian Yee</h1>
+        <h1 class="about-headings">Vivian Yee</h1>
         <Image
           alt="Char Image"
           style={{
             width: "10rem",
             height: "11rem",
           }}
+          class="about-headings"
           src={require("../public/images/me.jpg")}
         />
-        <h3>
+        <h3 class="about-paragraph">
           &emsp; Hello! I`m Vivian Yee, a frontend focused software engineer
           with a passion for creating intuitive and engaging user experiences. I
           am dedicated to crafting robust and scalable web applications and thrive on frontend

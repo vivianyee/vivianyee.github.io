@@ -15,6 +15,7 @@ function NavBar() {
 
   return (
     <div
+      class="nav-bar"
       className="center"
       style={{
         position: "absolute",
@@ -25,7 +26,7 @@ function NavBar() {
     >
       {currentTab !== "" ? (
         <>
-          <Row style={{ width: "80%", padding: "20px 0" }}>
+          <Row style={{ margin: "auto", width: "80%", padding: "20px 0" }}>
             {subHeadings.map((heading) => (
               <Col
                 key={heading.title}
@@ -41,7 +42,7 @@ function NavBar() {
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <div className="center">
-                    <motion.h2
+                    <motion.h3
                       style={{
                         color: "white",
                         cursor: "pointer",
@@ -55,7 +56,7 @@ function NavBar() {
                       {currentTab.toLocaleUpperCase() !== heading.title
                         ? `${heading.title}`
                         : `- ${heading.title} -`}
-                    </motion.h2>
+                    </motion.h3>
                     {hoverHeading === heading.title && (
                       <motion.h3
                         style={{

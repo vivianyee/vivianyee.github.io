@@ -8,14 +8,14 @@ export default function TitleScreen() {
 
   return (
     <>
-      <h3
+      <h2
+        class="heading"
         style={{
-          fontSize: "3rem",
           textAlign: "center",
         }}
       >
         Vivian Yee
-      </h3>
+      </h2>
       <div style={{ width: "90%" }}>
         {subHeadings.map((heading) => (
           <Link
@@ -29,7 +29,6 @@ export default function TitleScreen() {
                   color: "white",
                   display: "inline-block",
                   position: "absolute",
-                  fontSize: "1.5rem",
                   padding: "25px",
                   paddingLeft: "0px",
                   margin: "0",
@@ -43,7 +42,6 @@ export default function TitleScreen() {
               style={{
                 color: "white",
                 padding: "25px",
-                fontSize: "1.5 rem",
                 cursor: "pointer",
                 margin: "0",
               }}

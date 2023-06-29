@@ -27,8 +27,9 @@ export default function Footer() {
     <div
       style={{
         position: "absolute",
-        bottom: "0",
+        bottom: 0,
         width: "100%",
+        height: "5rem"
       }}
     >
       <a
@@ -66,6 +67,7 @@ export default function Footer() {
           }}
         >
           <Image
+            class="fly"
             alt="OOPS"
             style={{
               position: "absolute",

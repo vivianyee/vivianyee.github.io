@@ -23,25 +23,22 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
           alignItems: "center",
         }}
       >
-        <h1 style={{ marginBottom: "10px" }}>{title} SELECTION</h1>
-        <div
-          className={"center"}
-          style={{ height: "35vh", width: "100%"}}
-        >
+        <h1 class="description-header" style={{ marginBottom: "10px" }}>
+          {title} SELECTION
+        </h1>
+        <div className={"center"} style={{ height: "35vh", width: "100%" }}>
           {hoverSelect ? (
             <div
               className="center"
               style={{
                 flexDirection: "column",
                 alignItems: "center",
+                textAlign: "center",
               }}
             >
               <Image
+                class="description-image"
                 alt="Char Image"
-                style={{
-                  width: "15rem",
-                  height: "15rem",
-                }}
                 src={require(`../images/${hoverSelect.image}`)}
               />
               <h2>{hoverSelect.dataName}</h2>
@@ -57,7 +54,9 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
             alignItems: "center",
           }}
         >
-          <h3 style={{ marginBottom: "10px" }}>CHOOSE YOUR {title}</h3>
+          <h3 style={{ marginBottom: "10px", textAlign: "center" }}>
+            CHOOSE YOUR {title}
+          </h3>
           <Row className="center" style={{ width: "100%", padding: "25px 0" }}>
             {selectionData.map((data) => (
               <Col span={col} className="center" key={data.url}>

@@ -9,8 +9,78 @@ body {
   background-color: #18191A;
   color:white;
 }
-
+h2 {
+  font-size: 1.5rem;
+}
+.heading{
+  font-size: 3rem;
+}
 .center{
   display: flex;
   justify-content: center;
+}
+.description-header{
+  font-size: 2rem;
+}
+.description-image{
+  width: 12rem;
+  height: 12rem;
+}
+.mobile-nav-bar{
+  display: none;
+}
+.nav-bar{
+  display:block;
+}
+@media only screen and (max-width: 600px) {
+  .mobile-nav-bar{
+    display: block;
+  }
+  .nav-bar{
+    display:none;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  .heading{
+    font-size: 2rem;
+  }
+  .fly{
+    height: 7rem;
+    width: 7rem;
+  }
+  .about-paragraph {
+    font-size: 11px;
+  }
+  .about-headings {
+    display:none;
+  }
+  .ant-drawer-wrapper-body{
+    background-color: #18191A;
+  }
+  .ant-drawer-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .description-header{
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .description-image{
+    width: 9rem;
+    height: 9rem;
+  }
+  .description-subheadings{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .mobile-nav-bar{
+    display: block;
+  }
+  .nav-bar{
+    display:none;
+  }
 }
