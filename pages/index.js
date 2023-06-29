@@ -9,9 +9,9 @@ export default function Home() {
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
       <div
+        class="home-center mobile-adjust"
         style={{
           // border: "3px solid white",
-          padding: "30px 70px",
           // boxShadow: "10px 5px 5px grey",
           display: "flex",
           flexDirection: "column",

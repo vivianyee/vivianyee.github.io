@@ -15,6 +15,7 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
       <div
+        class="mobile-adjust"
         style={{
           // border: "3px solid black",
           width: "80%",
@@ -26,7 +27,7 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
         <h1 class="description-header" style={{ marginBottom: "10px" }}>
           {title} SELECTION
         </h1>
-        <div className={"center"} style={{ height: "35vh", width: "100%" }}>
+        <div className={"center"} style={{ width: "100%" }}>
           {hoverSelect ? (
             <div
               className="center"

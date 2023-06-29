@@ -33,6 +33,12 @@ h2 {
   display:block;
 }
 @media only screen and (max-width: 600px) {
+  .mobile-adjust{
+    padding-bottom: 50px;
+  }
+  .footer{
+    padding-bottom: 50px;
+  }
   .mobile-nav-bar{
     display: block;
   }
@@ -46,8 +52,8 @@ h2 {
     font-size: 2rem;
   }
   .fly{
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
   }
   .about-paragraph {
     font-size: 11px;
@@ -65,11 +71,11 @@ h2 {
   }
   .description-header{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .description-image{
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
   }
   .description-subheadings{
     font-size: 10px;

@@ -9,6 +9,7 @@ export default function About() {
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
       <div
+        class="mobile-adjust"
         style={{
           display: "flex",
           alignItems: "center",

@@ -20,6 +20,7 @@ export default function Description({ selectionData }) {
 
   return (
     <div
+      class="mobile-adjust"
       style={{
         display: "flex",
         flexDirection: "column",

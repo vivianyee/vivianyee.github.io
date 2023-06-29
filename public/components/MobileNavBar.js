@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Col, Row } from "antd";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { subHeadings } from "../constants/constants";
