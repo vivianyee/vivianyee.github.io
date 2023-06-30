@@ -59,9 +59,7 @@ export default function Footer() {
       >
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
-          onHoverEnd={() => setHoverFoot(false)}
-          whileHover={{ scale: 1.01 }}
-          whileTap={{ scale: .99  }}
+          onHoverEnd={() => setHoverFoot(false)}  
           style={{
             cursor: "pointer",
             textAlign: "center",
