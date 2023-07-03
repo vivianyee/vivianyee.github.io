@@ -86,6 +86,7 @@ export default function Description({ selectionData }) {
             </h4>
           );
         })}
+        {selectionData.name === "HOBBIES" && <a style={{color:"white"}} href="https://www.instagram.com/vmy_art_profile/">INSTAGRAM</a>}
         <h4 class="description-subheadings">- {selectionData.tech} -</h4>
       </div>
     </div>

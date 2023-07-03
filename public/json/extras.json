@@ -26,7 +26,8 @@
             "tech": "CREATIVE, INNOVATIVE, INVENTIVE",
             "image": "extras/hobbies.png",
             "description": [
-                "Has many creative hobbies such as sculpting, painting, drawing, and crocheting."
+                "Has many creative hobbies such as sculpting, painting, drawing, and crocheting.",
+                "View my art Instagram portfolio below."
             ]
         },
         {
@@ -39,7 +40,9 @@
             "tech": "ADVENTUROUS, BOLD, DRIVEN",
             "image": "extras/travels.png",
             "description": [
-                "Has a love for traveling to far away countries. Has future plans to travel to Japan, South Korea, and Thailand"
+                "Has a love for traveling to far away countries and domestic places.", 
+                "Previously visited Canada, Malaysia, Iceland, and different states in the US!",
+                "Has future plans to travel to Japan, South Korea, and Thailand."
             ]
         }
     ]
