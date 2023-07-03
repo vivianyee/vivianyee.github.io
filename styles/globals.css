@@ -36,6 +36,15 @@ h2 {
   border-top: 1px solid white;
 }
 @media only screen and (max-width: 600px) {
+  .no_highlights{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
   .thumbnail-border{
     border-top: none;
   }

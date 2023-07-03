@@ -87,7 +87,7 @@ export default function Thumbnail({ selection, title, col, selectionData }) {
           </h3>
           <Row className="center" style={{ width: "100%", padding: "25px 0" }}>
             {selectionData.map((data) => (
-              <Col span={col} className="center" key={data.url}>
+              <Col span={col} className="center no_highlights" key={data.url}>
                 <div>
                   <Link
                     class="nav-bar"
