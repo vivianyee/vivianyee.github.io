@@ -45,9 +45,6 @@ h2 {
     -ms-user-select: none;
     user-select: none;
   }
-  body {
-    overflow: visible !important;
-  }
   .thumbnail-border{
     border-top: none;
   }
