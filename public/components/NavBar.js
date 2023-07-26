@@ -85,7 +85,7 @@ function NavBar() {
             fontSize: "15px",
           }}
         >
-          CLICK ANY BUTTON TO START
+          CLICK THE LITTLE WALKING GUY TO GO HOME
         </motion.h4>
       )}
     </div>

@@ -28,18 +28,18 @@ export default function About() {
           src={require("../public/images/me.jpg")}
         />
         <h3 class="about-paragraph">
-          &emsp; Hello! I`m Vivian Yee, a frontend focused software engineer
+          &emsp; Hello! I`m Vivian Yee, a front-end focused software engineer
           with a passion for creating intuitive and engaging user experiences. I
-          am dedicated to crafting robust and scalable web applications and thrive on frontend
+          am dedicated to crafting robust and scalable web applications and thrive on front-end
           technologies.
           <br />
-          &emsp; I delved into frontend development, honing my skills in HTML,
-          CSS, and JavaScript. I am well experienced in frontend libraries like React and
+          &emsp; I delved into front-end development, honing my skills in HTML,
+          CSS, and JavaScript. I am well experienced in front-end libraries like React and
           frameworks like Angular to build scalable applications. I am
           well-versed in modern development tools and have a solid understanding
           of version control systems such as Git.
           <br />
-          &emsp; I am excited to contribute my passion for frontend development,
+          &emsp; I am excited to contribute my passion for front-end development,
           attention to detail, and eagerness to learn in a dynamic and
           collaborative environment. If you`re looking for a dedicated software
           engineer who is committed to delivering high-quality user experiences,

@@ -5,19 +5,19 @@
             "dataName": "ROCKET MORTGAGE",
             "url": "rocket-mortgage",
             "date": "JUNE 2022 - PRESENT",
-            "position": "ASSOCIATE SOFTWARE ENGINEER",
-            "summmary": "CURRENTLY WORKING AS AN ASSOCIATE SOFTWARE ENGINEER AT ROCKET MORTGAGE",
+            "position": "SOFTWARE ENGINEER",
+            "summmary": "CURRENTLY WORKING AS A SOFTWARE ENGINEER AT ROCKET MORTGAGE",
             "tech": "ANGULAR, JAVASCRIPT, TYPESCRIPT",
             "image": "experiences/rocket-mortgage.png",
             "description": [
                 "Currently engaged in front-end development of the portal for our brokerage partners using Angular. Enhances Rocket`s partner portal homepage by adding 3+ web components.",
-                "Utilizes Jasmine and Cypress for end to end testing on front-end code using TypeScript, delivers and deploys code through CircleCI pipeline and Hal and goes 2-3 thorough code reviews every week.",
+                "Conducts thorough troubleshooting and root cause analysis using Dynatrace and Splunk in response to PagerDuty calls resulting in effective solutions to ensure minimal disruption to Rocket's operations.",
                 "Contributes to all of RocketProTPO website`s benefits, programs, and homepage using WordPress and has increased the traffic of the site by up to 68,000 visitors a month."
             ]
         },
         {
             "name": "BETTER",
-            "dataName": "BETTER.COM",
+            "dataName": "BETTER MORTGAGE",
             "url": "better",
             "date": "FEBRURARY 2022 - APRIL 2022 & JUNE 2021 - AUGUST",
             "position": "SOFTWARE ENGINEER & INTERN",
