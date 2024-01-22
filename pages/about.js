@@ -1,51 +1,66 @@
 import Head from "next/head";
 import Image from "next/image";
+import { getCollections } from "../lib/mongo/collections";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
-export default function About() {
+export default function About({ about }) {
+  const src = "https://vivianyeebucket.s3.amazonaws.com/me.jpg";
+  const router = useRouter();
+
   return (
     <>
       <Head>
         <title>ABOUT</title>
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
+
       <div
-        class="mobile-adjust"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          width: "75%",
-        }}
+        class="centralBody"
       >
-        <h1 class="about-headings">Vivian Yee</h1>
-        <Image
-          alt="Char Image"
+        <motion.h4
           style={{
-            width: "10rem",
-            height: "11rem",
+            width:"fit-content",
+            cursor: "pointer",
           }}
-          class="about-headings"
-          src={require("../public/images/me.jpg")}
-        />
-        <h3 class="about-paragraph">
-          &emsp; Hello! I`m Vivian Yee, a front-end focused software engineer
-          with a passion for creating intuitive and engaging user experiences. I
-          am dedicated to crafting robust and scalable web applications and thrive on front-end
-          technologies.
-          <br />
-          &emsp; I delved into front-end development, honing my skills in HTML,
-          CSS, and JavaScript. I am well experienced in front-end libraries like React and
-          frameworks like Angular to build scalable applications. I am
-          well-versed in modern development tools and have a solid understanding
-          of version control systems such as Git.
-          <br />
-          &emsp; I am excited to contribute my passion for front-end development,
-          attention to detail, and eagerness to learn in a dynamic and
-          collaborative environment. If you`re looking for a dedicated software
-          engineer who is committed to delivering high-quality user experiences,
-          I would love to connect and explore how we can work together!
+          onClick={() => router.back()}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+        >
+          &lt; Back
+        </motion.h4>
+        <h3
+          class="heading"
+          style={{
+            borderBottom: "1px solid white",
+            paddingBottom: "20px",
+            marginBottom: "20px",
+            marginTop: "0"
+          }}
+        >
+          Vivian Yee
         </h3>
+        {/* <div style={{position:'relative', width:"10vw", height:"10vw"}}>
+        <Image loader={()=>src} fill={true} src={src}/>
+      </div> */}
+        {about.map((data) => {
+          return (
+            <h4 style={{ margin: "5px" }} class="about-paragraph" key={data}>
+              &emsp; {data}
+              <br />
+            </h4>
+          );
+        })}
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { collection } = await getCollections();
+  if (!collection) {
+    throw new Error(`Failed to fetch about`);
+  }
+
+  return { props: { about: collection[0]["about"] } };
 }

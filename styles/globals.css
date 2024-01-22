@@ -9,8 +9,21 @@ body {
   background-color: #18191A;
   color:white;
 }
+
+.centralBody{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 40%;
+  padding-bottom: 50px;
+}
+
 h2 {
   font-size: 1.5rem;
+}
+.ant-drawer-body{
+  background-color: #18191A;
 }
 .heading{
   font-size: 3rem;
@@ -36,6 +49,9 @@ h2 {
   border-top: 1px solid white;
 }
 @media only screen and (max-width: 600px) {
+  .centralBody{
+    width: 90%;
+  }
   .no_highlights{
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;

@@ -33,7 +33,7 @@ export default function Footer() {
         height: "5rem"
       }}
     >
-      <a
+      {/* <a
         href="../vivian-resume.pdf"
         className="center"
         download
@@ -53,9 +53,11 @@ export default function Footer() {
         >
           RESUME
         </motion.h2>
-      </a>
-      <Link
-        href='/'
+      </a> */}
+      <a
+        href="../vivian-resume.pdf"
+        className="center"
+        download
       >
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
@@ -80,7 +82,7 @@ export default function Footer() {
             }
           />
         </motion.div>
-      </Link>
+      </a>
     </div>
   );
 }

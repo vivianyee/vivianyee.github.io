@@ -1,39 +1,63 @@
-import Head from "next/head";
-import experiencesJSON from "../json/experiences.json";
-import extrasJSON from "../json/extras.json";
-import projectsJSON from "../json/projects.json";
-import Thumbnail from "./Thumbnail";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function Selection({ titleSelection }) {
-  let title, selectionData;
-
-  switch (titleSelection) {
-    case "experiences":
-      title = "WORK EXPERIENCE";
-      selectionData = experiencesJSON.selections;
-      break;
-    case "extras":
-      title = "EXTRA FACT";
-      selectionData = extrasJSON.selections;
-      break;
-    case "projects":
-      title = "PROJECT";
-      selectionData = projectsJSON.selections;
-      break;
-  }
+export default function Selection({ title, selections }) {
+  const router = useRouter();
+  const [hoverHeading, setHoverHeading] = useState("");
 
   return (
-    <>
-      <Head>
-        <title>{titleSelection}</title>
-        <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
-      </Head>
-      <Thumbnail
-        selection={titleSelection}
-        title={title}
-        col={8}
-        selectionData={selectionData}
-      />
-    </>
+    <div>
+      {title !== "Vivian Yee" && (
+        <motion.h4
+          style={{
+            width:"fit-content",
+            cursor: "pointer",
+          }}
+          onClick={() => router.back()}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+        >
+          &lt; Back
+        </motion.h4>
+      )}
+      <h3
+        className="heading"
+        style={{
+          borderBottom: "1px solid white",
+          paddingBottom: "20px",
+          marginBottom: "20px",
+          marginTop: "0"
+        }}
+      >
+        {title}
+      </h3>
+      <div style={{ width: "90%" }}>
+        {selections.map((heading) => (
+          <Link
+            key={heading.url}
+            href={heading.url}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <motion.h2
+              style={{
+                width:"fit-content",
+                color: "white",
+                padding: "15px 15px 15px 0",
+                cursor: "pointer",
+                margin: "0",
+              }}
+              onHoverStart={() => setHoverHeading(heading.name)}
+              onHoverEnd={() => setHoverHeading("")}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              &emsp; {heading.name} {hoverHeading === heading.name && "<-"}
+            </motion.h2>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

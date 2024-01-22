@@ -15,8 +15,7 @@ function NavBar() {
 
   return (
     <div
-      class="nav-bar"
-      className="center"
+      className="center, nav-bar"
       style={{
         position: "absolute",
         top: 0,

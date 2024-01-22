@@ -20,8 +20,7 @@ function MobileNavBar() {
   };
   return (
     <div
-      class="mobile-nav-bar"
-      className="center"
+      className="center, mobile-nav-bar"
       style={{
         position: "absolute",
         top: 0,
@@ -31,23 +30,22 @@ function MobileNavBar() {
     >
       {currentTab !== "" ? (
         <>
-            <motion.h4
-            className="center"
-            style={{
-                color: "white",
-                width: "100%",
-                textAlign: "center",
-                fontSize: "15px",
-                padding: "5px"
-            }}
-            whileTap={{ scale: 0.9 }}
-            onClick={showDrawer}
-            >
-                - MAIN MENU -
-            </motion.h4>
+          <motion.h4
+          className="center"
+          style={{
+              color: "white",
+              width: "100%",
+              textAlign: "center",
+              fontSize: "15px",
+              padding: "5px"
+          }}
+          whileTap={{ scale: 0.9 }}
+          onClick={showDrawer}
+          >
+            - MAIN MENU -
+          </motion.h4>
           <Drawer
-            className="center"
-            class="drawer"
+            className="center, drawer"
             placement="top"
             closable={false}
             onClose={onClose}
@@ -58,6 +56,7 @@ function MobileNavBar() {
                 <Link
                 href={"/" + heading.path}
                 style={{ textDecoration: "none", color: "black" }}
+                key={heading.path}
                 >
                 <div className="center">
                     <motion.h3

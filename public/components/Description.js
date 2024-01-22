@@ -1,94 +1,69 @@
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
-import { useState, useEffect } from "react";
 
 export default function Description({ selectionData }) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  const handleResize = () => {
-    if (window.innerWidth < 600) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  }, []);
+  const router = useRouter();
 
   return (
-    <div
-      class="mobile-adjust"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <Link
-        style={{
-          textDecoration: "none",
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "left",
-          width: "80%",
-        }}
-        href={"./"}
-      >
+    <div>
         <motion.h4
-          whileHover={{ scale: 1.01 }}
-          whileTap={{ scale: 0.99 }}
-          style={{ margin: 0 }}
-          class="description-subheadings"
-        >
-          &#60; BACK
-        </motion.h4>
-      </Link>
-      <div
         style={{
-          // border: "3px solid black",
-          width: "75%",
+          width:"fit-content",
+          cursor: "pointer",
+        }}
+        onClick={() => router.back()}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8 }}
+        >
+        &lt; Back
+        </motion.h4>
+      <h3
+        class="heading"
+        style={{
+          paddingBottom: "10px",
+          margin: "0",
+        }}>
+        {selectionData.dataName}
+      </h3>
+      <div 
+      class="description-subheadings"
+        style={{
+          borderBottom: "1px solid white",
+          paddingBottom: "20px",
+          marginBottom: "20px",
+        }}>
+        {selectionData.summary}</div>
+      <div
+        class="description-subheadings"
+        style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginBottom: "48px",
-          textAlign: "center",
+          justifyContent: "space-between",
         }}
       >
-        <h3 style={{ textAlign: "center" }}>{selectionData.dataName}</h3>
-        <h4
-          class="description-subheadings"
-          style={{ margin: "0", textAlign: "center" }}
-        >
-          {selectionData.date}
+        <h4>{selectionData.position}</h4>
+        <h4>
+          <i>{selectionData.date}</i>
         </h4>
-        {isMobile ? null : (
-          <Image
-            alt="OOPS"
-            class="nav-bar"
-            style={{
-              width: "12rem",
-              height: "12rem"}}
-            src={require(`../images/${selectionData.image}`)}
-          />
-        )}
-        <h4 class="description-subheadings" style={{ textAlign: "center" }}>
-          {selectionData.position}
-        </h4>
-        {selectionData.description.map((data) => {
-          return (
-            <h4 style={{ margin: "5px" }} class="about-paragraph">
-              {data}
-              <br />
-            </h4>
-          );
-        })}
-        {selectionData.name === "HOBBIES" && <a style={{color:"white"}} href="https://www.instagram.com/vmy_art_profile/">INSTAGRAM</a>}
-        <h4 class="description-subheadings">- {selectionData.tech} -</h4>
       </div>
+      {selectionData.description.map((data) => {
+        return (
+          <h4 style={{ margin: "5px" }} class="about-paragraph" key={data}>
+            &emsp; {data}
+            <br />
+          </h4>
+        );
+      })}
+      {selectionData.name === "HOBBIES" && (
+        <a
+          style={{ color: "white" }}
+          href="https://www.instagram.com/vmy_art_profile/"
+        >
+          INSTAGRAM
+        </a>
+      )}
+      <h4 class="description-subheadings center">
+        - <b>{selectionData.tech}</b> -
+      </h4>
     </div>
   );
 }
