@@ -22,31 +22,12 @@ body {
 h2 {
   font-size: 1.5rem;
 }
-.ant-drawer-body{
-  background-color: #18191A;
-}
 .heading{
   font-size: 3rem;
 }
 .center{
   display: flex;
   justify-content: center;
-}
-.description-header{
-  font-size: 2rem;
-}
-.description-image{
-  width: 12rem;
-  height: 12rem;
-}
-.mobile-nav-bar{
-  display: none;
-}
-.nav-bar{
-  display:block;
-}
-.thumbnail-border{
-  border-top: 1px solid white;
 }
 @media only screen and (max-width: 600px) {
   .centralBody{
@@ -61,20 +42,11 @@ h2 {
     -ms-user-select: none;
     user-select: none;
   }
-  .thumbnail-border{
-    border-top: none;
-  }
   .mobile-adjust{
     padding-bottom: 80px;
   }
   .footer{
     padding-bottom: 80px;
-  }
-  .mobile-nav-bar{
-    display: block;
-  }
-  .nav-bar{
-    display:none;
   }
   h2 {
     font-size: 1.25rem;
@@ -95,29 +67,7 @@ h2 {
   .ant-drawer-wrapper-body{
     background-color: #18191A;
   }
-  .ant-drawer-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .description-header{
-    text-align: center;
-    font-size: 1.25rem;
-  }
-  .description-image{
-    width: 7rem;
-    height: 7rem;
-  }
   .description-subheadings{
     font-size: 10px;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .mobile-nav-bar{
-    display: block;
-  }
-  .nav-bar{
-    display:none;
   }
 }

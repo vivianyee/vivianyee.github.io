@@ -3,24 +3,22 @@ import Image from "next/image";
 import { getCollections } from "../lib/mongo/collections";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Layout from "@public/components/Layout";
 
 export default function About({ about }) {
   const src = "https://vivianyeebucket.s3.amazonaws.com/me.jpg";
   const router = useRouter();
 
   return (
-    <>
-      <Head>
-        <title>ABOUT</title>
-        <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
-      </Head>
-
-      <div
-        class="centralBody"
-      >
+    <div class="centralBody">
+      <Layout>
+        <Head>
+          <title>ABOUT</title>
+          <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
+        </Head>
         <motion.h4
           style={{
-            width:"fit-content",
+            width: "fit-content",
             cursor: "pointer",
           }}
           onClick={() => router.back()}
@@ -35,7 +33,7 @@ export default function About({ about }) {
             borderBottom: "1px solid white",
             paddingBottom: "20px",
             marginBottom: "20px",
-            marginTop: "0"
+            marginTop: "0",
           }}
         >
           Vivian Yee
@@ -51,8 +49,8 @@ export default function About({ about }) {
             </h4>
           );
         })}
-      </div>
-    </>
+      </Layout>
+    </div>
   );
 }
 
