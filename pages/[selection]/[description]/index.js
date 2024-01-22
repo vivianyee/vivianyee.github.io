@@ -2,8 +2,8 @@ import Head from "next/head";
 import { indexOfSelections } from '../../../public/constants/constants';
 import { arrayOfPages } from "../../../public/constants/constants";
 import { getCollections } from "../../../lib/mongo/collections";
-import Descrip from "../../../public/components/Description";
-import Layout from "../../../public/components/layout";
+import Layout from "../../../public/components/Layout";
+import Description from "../../../public/components/Description";
 
 export default function DescriptionPage({ route, title, page, selectionData }) {
     return (
@@ -15,7 +15,7 @@ export default function DescriptionPage({ route, title, page, selectionData }) {
                 <title>{title}</title>
                 <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
             </Head>
-            <Descrip selectionData={selectionData[page][route]}/>
+            <Description selectionData={selectionData[page][route]}/>
             </Layout>
         </div>
     )

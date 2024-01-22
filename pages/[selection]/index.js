@@ -1,8 +1,7 @@
-import Selection from "../../public/components/Selection";
 import Head from "next/head";
 import { getCollections } from "../../lib/mongo/collections";
-import Layout from "../../public/components/layout";
-import Select from "../../public/components/Selection";
+import Layout from "../../public/components/Layout";
+import Selection from "../../public/components/Selection";
 
 export default function SelectionPage({ route, title, selectionData }) {
   const selectArray = Object.values(selectionData[route]);
@@ -16,8 +15,7 @@ export default function SelectionPage({ route, title, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        {/* <Selection selection={route} title={title} selectionData={selectionData[route]}/> */}
-        <Select title={title} selections={selectArray} />
+        <Selection title={title} selections={selectArray} />
       </Layout>
     </div>
   );
