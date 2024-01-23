@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { getCollections } from "../lib/mongo/collections";
+import { getCollections } from "@lib/mongo/collections";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Layout from "@public/components/Layout";

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import TitleScreen from "./home";
-import Layout from "../public/components/Layout";
+import Layout from "@public/components/Layout";
 
 export default function Home() {
   return (

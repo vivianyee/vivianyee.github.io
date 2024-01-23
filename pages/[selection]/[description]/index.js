@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { indexOfSelections } from '../../../public/constants/constants';
+import { indexOfSelections } from "../../../public/constants/constants";
 import { arrayOfPages } from "../../../public/constants/constants";
-import { getCollections } from "../../../lib/mongo/collections";
-import Layout from "../../../public/components/Layout";
-import Description from "../../../public/components/Description";
+import { getCollections } from "@lib/mongo/collections";
+import Layout from "@public/components/Layout";
+import Description from "@public/components/Description";
 
 export default function DescriptionPage({ route, title, page, selectionData }) {
     return (
