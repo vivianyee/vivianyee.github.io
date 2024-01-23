@@ -1,12 +1,12 @@
-import { getCollections } from "../../../lib/mongo/collections";
+import { getCollections } from "@lib/mongo/collections";
 
 const handler = async (req, res) => {
     if(req.method === 'GET') {
         try {
-            const { collections, error } = await getCollections();
+            const { collection, error } = await getCollections();
             if (error) throw new Error(error);
 
-            return res.status(200).json({ collections });
+            return res.status(200).json({ collection });
         } catch (error) {
             return res.status(500).json({ error: error.message })
         }

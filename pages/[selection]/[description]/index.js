@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { indexOfSelections } from "../../../public/constants/constants";
-import { arrayOfPages } from "../../../public/constants/constants";
 import { getCollections } from "@lib/mongo/collections";
 import Layout from "@public/components/Layout";
 import Description from "@public/components/Description";
@@ -21,27 +19,16 @@ export default function DescriptionPage({ route, title, page, selectionData }) {
     )
 }
 
-export async function getStaticPaths() {
-    const paths = arrayOfPages.map((x) => {
-        return { params: { selection: indexOfSelections[x], description: x }}
-    }); 
-
-    return {
-        paths: paths, 
-        fallback: "blocking" 
-    }
-}
-
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
     const props = {}
-    props.title = params.description.split("-").join(" ").toLocaleUpperCase();
-    props.page = params.selection;
-    props.route = params.description;
+    const {selection, description} = context.params;
+    props.title = description.split("-").join(" ").toLocaleUpperCase();
+    props.page = selection;
+    props.route = description;
 
-    const { collection } = await getCollections(params.selection);
+    const { collection } = await getCollections(selection);
     if(!collection){
-        throw new Error(`Failed to fetch ${params.selection}`);
+        throw new Error(`Failed to fetch ${selection}`);
     }
     delete collection[0]['_id'];
     props.selectionData = collection[0];
