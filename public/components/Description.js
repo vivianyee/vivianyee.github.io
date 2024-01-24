@@ -53,14 +53,14 @@ export default function Description({ selectionData }) {
           </h4>
         );
       })}
-      {selectionData.name === "HOBBIES" && (
+      {/* {selectionData.name === "HOBBIES" && (
         <a
           style={{ color: "white" }}
           href="https://www.instagram.com/vmy_art_profile/"
         >
           INSTAGRAM
         </a>
-      )}
+      )} */}
       <h4 class="description-subheadings center">
         - <b>{selectionData.tech}</b> -
       </h4>
