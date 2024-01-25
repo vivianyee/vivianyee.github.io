@@ -18,7 +18,7 @@ export default function Description({ selectionData }) {
         &lt; Back
         </motion.h4>
       <h3
-        class="heading"
+        className="heading"
         style={{
           paddingBottom: "10px",
           margin: "0",
@@ -26,7 +26,7 @@ export default function Description({ selectionData }) {
         {selectionData.dataName}
       </h3>
       <div 
-      class="description-subheadings"
+      className="description-subheadings"
         style={{
           borderBottom: "1px solid white",
           paddingBottom: "20px",
@@ -34,7 +34,7 @@ export default function Description({ selectionData }) {
         }}>
         {selectionData.summary}</div>
       <div
-        class="description-subheadings"
+        className="description-subheadings"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -47,7 +47,7 @@ export default function Description({ selectionData }) {
       </div>
       {selectionData.description.map((data) => {
         return (
-          <h4 style={{ margin: "5px" }} class="about-paragraph" key={data}>
+          <h4 style={{ margin: "5px" }} className="about-paragraph" key={data}>
             &emsp; {data}
             <br />
           </h4>
@@ -61,7 +61,7 @@ export default function Description({ selectionData }) {
           INSTAGRAM
         </a>
       )} */}
-      <h4 class="description-subheadings center">
+      <h4 className="description-subheadings center">
         - <b>{selectionData.tech}</b> -
       </h4>
     </div>

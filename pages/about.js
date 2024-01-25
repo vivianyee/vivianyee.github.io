@@ -10,7 +10,7 @@ export default function About({ about }) {
   const router = useRouter();
 
   return (
-    <div class="centralBody">
+    <div className="centralBody">
       <Layout>
         <Head>
           <title>ABOUT</title>
@@ -28,7 +28,7 @@ export default function About({ about }) {
           &lt; Back
         </motion.h4>
         <h3
-          class="heading"
+          className="heading"
           style={{
             borderBottom: "1px solid white",
             paddingBottom: "20px",
@@ -43,7 +43,7 @@ export default function About({ about }) {
       </div> */}
         {about.map((data) => {
           return (
-            <h4 style={{ margin: "5px" }} class="about-paragraph" key={data}>
+            <h4 style={{ margin: "5px" }} className="about-paragraph" key={data}>
               &emsp; {data}
               <br />
             </h4>

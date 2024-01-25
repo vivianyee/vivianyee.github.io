@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <div
-      class="footer"
+    className="footer"
       style={{
         position: "absolute",
         bottom: 0,
@@ -68,7 +68,7 @@ export default function Footer() {
           }}
         >
           <Image
-            class="fly footer"
+            className="fly footer"
             alt="OOPS"
             style={{
               position: "absolute",

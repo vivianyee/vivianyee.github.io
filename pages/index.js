@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
       <div
-        class="mobile-adjust centralBody"
+        className="mobile-adjust centralBody"
       >
         <Layout>
           <TitleScreen />

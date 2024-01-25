@@ -7,9 +7,7 @@ export default function SelectionPage({ route, title, selectionData }) {
   const selectArray = Object.values(selectionData[route]);
 
   return (
-    <div
-      class="mobile-adjust centralBody"
-    >
+    <div className="mobile-adjust centralBody">
       <Layout>
         <Head>
           <title>{title}</title>
@@ -23,7 +21,7 @@ export default function SelectionPage({ route, title, selectionData }) {
 
 export async function getServerSideProps(context) {
   const props = {};
-  const {selection} = context.params;
+  const { selection } = context.params;
   props.route = selection;
 
   const { collection } = await getCollections();
