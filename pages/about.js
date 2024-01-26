@@ -54,7 +54,7 @@ export default function About({ about }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { collection } = await getCollections();
   if (!collection) {
     throw new Error(`Failed to fetch about`);

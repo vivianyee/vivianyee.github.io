@@ -19,10 +19,20 @@ export default function SelectionPage({ route, title, selectionData }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { selection: "experiences" } },
+      { params: { selection: "extras" } },
+      { params: { selection: "projects" } },
+    ],
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticPaths({ params }) {
   const props = {};
-  const { selection } = context.params;
-  props.route = selection;
+  props.route = params.selection;
 
   const { collection } = await getCollections();
   if (!collection) {
@@ -32,7 +42,7 @@ export async function getServerSideProps(context) {
   delete collection[0]["_id"];
   props.selectionData = collection[0];
 
-  switch (selection) {
+  switch (params.selection) {
     case "experiences":
       props.title = "Work Experiences";
       break;
