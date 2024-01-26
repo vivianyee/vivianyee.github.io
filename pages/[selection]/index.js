@@ -4,7 +4,11 @@ import Layout from "@public/components/Layout";
 import Selection from "@public/components/Selection";
 
 export default function SelectionPage({ route, title, selectionData }) {
-  const selectArray = Object.values(selectionData[route]);
+  let selectArray = [];
+
+  if(selectionData && selectionData[route]){
+    selectArray = Object.values(selectionData[route]);
+  }
 
   return (
     <div className="mobile-adjust centralBody">

@@ -5,6 +5,12 @@ import Description from "@public/components/Description";
 import { arrayOfPages, indexOfSelections } from "@public/constants/constants";
 
 export default function DescriptionPage({ route, title, page, selectionData }) {
+  let selectObj = {};
+
+  if(selectionData && selectionData[page]){
+    selectObj = selectionData[page][route];
+  }
+
   return (
     <div className="mobile-adjust centralBody">
       <Layout>
@@ -12,7 +18,7 @@ export default function DescriptionPage({ route, title, page, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <Description selectionData={selectionData[page][route]} />
+        <Description selectionData={selectObj} />
       </Layout>
     </div>
   );
