@@ -6,6 +6,8 @@ import { pathToAnimation } from "../constants/constants";
 import Link from "next/link";
 
 export default function Footer() {
+  const url = 'https://vivianyeebucket.s3.amazonaws.com'
+
   const { asPath } = useRouter();
   const currentTab = asPath.split("/")[1];
   const [hoverFoot, setHoverFoot] = useState(false);
@@ -67,7 +69,7 @@ export default function Footer() {
             textAlign: "center",
           }}
         >
-          <Image
+          {/* <Image
             className="fly footer"
             alt="OOPS"
             style={{
@@ -80,7 +82,21 @@ export default function Footer() {
                 ? require(`../animation/${pathToAnimation[currentTab]}/${pathToAnimation[currentTab]}.00${image}.png`)
                 : require(`../animation/click.png`)
             }
+          /> */}
+          
+          <Image
+            className="fly footer"
+            alt="OOPS"
+            style={{
+              position: "absolute",
+              left: `${imagePosition}px`,
+              bottom: "30px",
+            }}
+            src={`${url}/${pathToAnimation[currentTab]}.00${image}.png`}
+            width={150}
+            height={150}
           />
+
         </motion.div>
       </a>
     </div>
