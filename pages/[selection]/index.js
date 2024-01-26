@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticPaths({ params }) {
+export async function getStaticProps({ params }) {
   const props = {};
   props.route = params.selection;
 
