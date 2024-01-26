@@ -3,7 +3,7 @@ import { getCollections } from "@lib/mongo/collections";
 import Layout from "@public/components/Layout";
 import Selection from "@public/components/Selection";
 
-export default function SelectionPage({ route, title, selectionData }) {
+export default function SelectionPage({ title, selectionData }) {
   return (
     <div className="mobile-adjust centralBody">
       <Layout>
@@ -11,7 +11,7 @@ export default function SelectionPage({ route, title, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <Selection title={title} selections={selectionData[route]} />
+        <Selection title={title} selections={selectionData} />
       </Layout>
     </div>
   );
@@ -24,21 +24,17 @@ export async function getStaticPaths() {
       { params: { selection: "extras" } },
       { params: { selection: "projects" } },
     ],
-    fallback: "blocking",
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
   const props = {};
-  props.route = params.selection;
 
   const { collection } = await getCollections();
-  if (!collection || !collection[0]) {
+  if (!collection) {
     throw new Error(`Failed to fetch ${params.selection}`);
   }
-
-  delete collection[0]["_id"];
-  props.selectionData = collection[0];
 
   switch (params.selection) {
     case "experiences":
@@ -51,6 +47,16 @@ export async function getStaticProps({ params }) {
       props.title = "Technical Projects";
       break;
   }
+
+  if(!collection[0]){
+    props.selectionData = [];
+    return {
+      props: props,
+    };
+  }
+
+  delete collection[0]["_id"];
+  props.selectionData = Object.values(collection[0][params.selection]);
 
   return {
     props: props,

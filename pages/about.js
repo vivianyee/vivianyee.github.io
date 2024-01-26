@@ -60,8 +60,12 @@ export default function About({ about }) {
 
 export async function getStaticProps() {
   const { collection } = await getCollections();
-  if (!collection || !collection[0]) {
+  if (!collection) {
     throw new Error(`Failed to fetch about`);
+  }
+
+  if (!collection[0]) {
+    return { props: { about: [] } };
   }
 
   return { props: { about: collection[0]["about"] } };

@@ -4,7 +4,7 @@ import Layout from "@public/components/Layout";
 import Description from "@public/components/Description";
 import { arrayOfPages, indexOfSelections } from "@public/constants/constants";
 
-export default function DescriptionPage({ route, title, page, selectionData }) {
+export default function DescriptionPage({ title, selectionData }) {
   return (
     <div className="mobile-adjust centralBody">
       <Layout>
@@ -12,7 +12,7 @@ export default function DescriptionPage({ route, title, page, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <Description selectionData={selectionData[page][route]} />
+        <Description selectionData={selectionData} />
       </Layout>
     </div>
   );
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: "blocking",
+    fallback: false,
   };
 }
 
@@ -32,15 +32,20 @@ export async function getStaticProps({ params }) {
   const props = {};
 
   props.title = params.description.split("-").join(" ").toLocaleUpperCase();
-  props.page = params.selection;
-  props.route = params.description;
 
   const { collection } = await getCollections(params.selection);
-  if (!collection || !collection[0]) {
+  if (!collection) {
     throw new Error(`Failed to fetch ${params.selection}`);
   }
+
+  if(!collection[0]){
+    props.selectionData = {};
+    return {
+      props: props,
+    };
+  }
   delete collection[0]["_id"];
-  props.selectionData = collection[0];
+  props.selectionData = collection[0][params.selection][params.description];
 
   return {
     props: props,
