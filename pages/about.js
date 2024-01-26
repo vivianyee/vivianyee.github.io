@@ -6,12 +6,6 @@ import { useRouter } from "next/router";
 import Layout from "@public/components/Layout";
 
 export default function About({ about }) {
-  let aboutPara = [];
-
-  if (aboutPara) {
-    aboutPara = about;
-  }
-
   const src = "https://vivianyeebucket.s3.amazonaws.com/me.jpg";
   const router = useRouter();
 
@@ -66,7 +60,7 @@ export default function About({ about }) {
 
 export async function getStaticProps() {
   const { collection } = await getCollections();
-  if (!collection) {
+  if (!collection || !collection[0]) {
     throw new Error(`Failed to fetch about`);
   }
 

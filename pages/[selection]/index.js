@@ -4,12 +4,6 @@ import Layout from "@public/components/Layout";
 import Selection from "@public/components/Selection";
 
 export default function SelectionPage({ route, title, selectionData }) {
-  let selectArray = [];
-
-  if (selectionData && selectionData[route]) {
-    selectArray = Object.values(selectionData[route]);
-  }
-
   return (
     <div className="mobile-adjust centralBody">
       <Layout>
@@ -17,7 +11,7 @@ export default function SelectionPage({ route, title, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <Selection title={title} selections={selectArray} />
+        <Selection title={title} selections={selectionData[route]} />
       </Layout>
     </div>
   );
@@ -39,7 +33,7 @@ export async function getStaticProps({ params }) {
   props.route = params.selection;
 
   const { collection } = await getCollections();
-  if (!collection) {
+  if (!collection || !collection[0]) {
     throw new Error(`Failed to fetch ${params.selection}`);
   }
 
