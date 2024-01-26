@@ -7,7 +7,7 @@ import { arrayOfPages, indexOfSelections } from "@public/constants/constants";
 export default function DescriptionPage({ route, title, page, selectionData }) {
   let selectObj = {};
 
-  if(selectionData && selectionData[page]){
+  if (selectionData && selectionData[page]) {
     selectObj = selectionData[page][route];
   }
 

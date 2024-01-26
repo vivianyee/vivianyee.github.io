@@ -6,7 +6,7 @@ import Selection from "@public/components/Selection";
 export default function SelectionPage({ route, title, selectionData }) {
   let selectArray = [];
 
-  if(selectionData && selectionData[route]){
+  if (selectionData && selectionData[route]) {
     selectArray = Object.values(selectionData[route]);
   }
 

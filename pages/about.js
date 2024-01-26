@@ -8,7 +8,7 @@ import Layout from "@public/components/Layout";
 export default function About({ about }) {
   let aboutPara = [];
 
-  if(aboutPara){
+  if (aboutPara) {
     aboutPara = about;
   }
 
@@ -49,7 +49,11 @@ export default function About({ about }) {
       </div> */}
         {about.map((data) => {
           return (
-            <h4 style={{ margin: "5px" }} className="about-paragraph" key={data}>
+            <h4
+              style={{ margin: "5px" }}
+              className="about-paragraph"
+              key={data}
+            >
               &emsp; {data}
               <br />
             </h4>
