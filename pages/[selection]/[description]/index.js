@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
   }
 
   if(!collection[0]){
-    props.selectionData = {};
+    props.selectionData = { description: [] };
     return {
       props: props,
     };
