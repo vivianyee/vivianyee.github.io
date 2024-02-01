@@ -6,33 +6,36 @@ export default function Description({ descriptionData }) {
 
   return (
     <div>
-        <motion.h4
+      <motion.h4
         style={{
-          width:"fit-content",
+          width: "fit-content",
           cursor: "pointer",
         }}
         onClick={() => router.back()}
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
-        >
+      >
         &lt; Back
-        </motion.h4>
+      </motion.h4>
       <h3
         className="heading"
         style={{
           paddingBottom: "10px",
           margin: "0",
-        }}>
+        }}
+      >
         {descriptionData.dataName}
       </h3>
-      <div 
-      className="description-subheadings"
+      <div
+        className="description-subheadings"
         style={{
           borderBottom: "1px solid white",
           paddingBottom: "20px",
           marginBottom: "20px",
-        }}>
-        {descriptionData.summary}</div>
+        }}
+      >
+        {descriptionData.summary}
+      </div>
       <div
         className="description-subheadings"
         style={{

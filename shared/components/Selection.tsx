@@ -12,7 +12,7 @@ export default function Selection({ title, selections }) {
       {title !== "Vivian Yee" && (
         <motion.h4
           style={{
-            width:"fit-content",
+            width: "fit-content",
             cursor: "pointer",
           }}
           onClick={() => router.back()}
@@ -28,7 +28,7 @@ export default function Selection({ title, selections }) {
           borderBottom: "1px solid white",
           paddingBottom: "20px",
           marginBottom: "20px",
-          marginTop: "0"
+          marginTop: "0",
         }}
       >
         {title}
@@ -42,7 +42,7 @@ export default function Selection({ title, selections }) {
           >
             <motion.h2
               style={{
-                width:"fit-content",
+                width: "fit-content",
                 color: "white",
                 padding: "15px 15px 15px 0",
                 cursor: "pointer",
