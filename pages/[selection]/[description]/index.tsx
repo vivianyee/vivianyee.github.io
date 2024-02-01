@@ -4,6 +4,7 @@ import Layout from "@shared/components/Layout";
 import Description from "@shared/components/Description";
 import { arrayOfPages, indexOfSelections } from "@shared/lib/constants";
 import React from "react";
+import { pagesProps } from "@shared/lib/types";
 
 export default function DescriptionPage({ title, descriptionData }) {
   return (

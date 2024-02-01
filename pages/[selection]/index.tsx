@@ -3,6 +3,7 @@ import { getCollections } from "../../lib/mongo/collections";
 import Layout from "@shared/components/Layout";
 import Selection from "@shared/components/Selection";
 import React from "react";
+import { pagesProps } from "@shared/lib/types";
 
 export default function SelectionPage({ title, selectionData }) {
   return (
