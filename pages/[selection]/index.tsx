@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getCollections } from "../../lib/mongo/collections";
-import Layout from "shared/components/Layout";
-import Selection from "shared/components/Selection";
+import Layout from "@shared/components/Layout";
+import Selection from "@shared/components/Selection";
 import React from "react";
 
 export default function SelectionPage({ title, selectionData }) {

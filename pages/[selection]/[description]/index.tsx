@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { getCollections } from "../../../lib/mongo/collections";
-import Layout from "shared/components/Layout";
-import Description from "shared/components/Description";
-import { arrayOfPages, indexOfSelections } from "shared/lib/constants";
+import Layout from "@shared/components/Layout";
+import Description from "@shared/components/Description";
+import { arrayOfPages, indexOfSelections } from "@shared/lib/constants";
 import React from "react";
 
 export default function DescriptionPage({ title, descriptionData }) {
@@ -50,8 +50,6 @@ export async function getStaticProps({ params }) {
   }
   delete collection[0]["_id"];
   props.descriptionData = collection[0][params.selection][params.description];
-
-  console.log(props.descriptionData)
 
   return {
     props: props,
