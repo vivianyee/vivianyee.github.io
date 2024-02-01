@@ -15,18 +15,25 @@ export const pathToAnimation = {
 };
 
 export const indexOfSelections = {
-  'rocket-mortgage': "experiences",
+  "rocket-mortgage": "experiences",
   better: "experiences",
-  'better-internship': "experiences",
-  'extracurricular-activities': "extras",
+  "better-internship": "experiences",
+  "extracurricular-activities": "extras",
   hobbies: "extras",
   travels: "extras",
-  'personal-project': "projects",
-  'senior-design-project': "projects",
-  'school-planner-app': "projects"
-}
+  "personal-project": "projects",
+  "senior-design-project": "projects",
+  "school-planner-app": "projects",
+};
 
 export const arrayOfPages = [
-  'rocket-mortgage', 'better', 'better-internship','extracurricular-activities','hobbies',
-  'travels','personal-project','senior-design-project','school-planner-app'];
-  
+  "rocket-mortgage",
+  "better",
+  "better-internship",
+  "extracurricular-activities",
+  "hobbies",
+  "travels",
+  "personal-project",
+  "senior-design-project",
+  "school-planner-app",
+];
