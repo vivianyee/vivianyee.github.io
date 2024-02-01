@@ -2,7 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { pathToAnimation } from "../constants/constants";
+import { pathToAnimation } from "../lib/constants";
 import Link from "next/link";
 
 export default function Footer() {

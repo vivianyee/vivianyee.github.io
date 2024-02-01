@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { getCollections } from "@lib/mongo/collections";
-import Layout from "@public/components/Layout";
-import Selection from "@public/components/Selection";
+import { getCollections } from "../../lib/mongo/collections";
+import Layout from "shared/components/Layout";
+import Selection from "shared/components/Selection";
+import React from "react";
 
 export default function SelectionPage({ title, selectionData }) {
   return (
@@ -29,7 +30,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const props = {};
+  const props: pagesProps = {
+    title: "",
+    selectionData: [],
+  };
 
   const { collection } = await getCollections();
   if (!collection) {
@@ -48,7 +52,7 @@ export async function getStaticProps({ params }) {
       break;
   }
 
-  if(!collection[0]){
+  if (!collection[0]) {
     props.selectionData = [];
     return {
       props: props,

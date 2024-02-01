@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-export default function Description({ selectionData }) {
+export default function Description({ descriptionData }) {
   const router = useRouter();
 
   return (
@@ -23,7 +23,7 @@ export default function Description({ selectionData }) {
           paddingBottom: "10px",
           margin: "0",
         }}>
-        {selectionData.dataName}
+        {descriptionData.dataName}
       </h3>
       <div 
       className="description-subheadings"
@@ -32,7 +32,7 @@ export default function Description({ selectionData }) {
           paddingBottom: "20px",
           marginBottom: "20px",
         }}>
-        {selectionData.summary}</div>
+        {descriptionData.summary}</div>
       <div
         className="description-subheadings"
         style={{
@@ -40,12 +40,12 @@ export default function Description({ selectionData }) {
           justifyContent: "space-between",
         }}
       >
-        <h4>{selectionData.position}</h4>
+        <h4>{descriptionData.position}</h4>
         <h4>
-          <i>{selectionData.date}</i>
+          <i>{descriptionData.date}</i>
         </h4>
       </div>
-      {selectionData.description.map((data) => {
+      {descriptionData.description.map((data) => {
         return (
           <h4 style={{ margin: "5px" }} className="about-paragraph" key={data}>
             &emsp; {data}
@@ -53,7 +53,7 @@ export default function Description({ selectionData }) {
           </h4>
         );
       })}
-      {/* {selectionData.name === "HOBBIES" && (
+      {/* {descriptionData.name === "HOBBIES" && (
         <a
           style={{ color: "white" }}
           href="https://www.instagram.com/vmy_art_profile/"
@@ -62,7 +62,7 @@ export default function Description({ selectionData }) {
         </a>
       )} */}
       <h4 className="description-subheadings center">
-        - <b>{selectionData.tech}</b> -
+        - <b>{descriptionData.tech}</b> -
       </h4>
     </div>
   );

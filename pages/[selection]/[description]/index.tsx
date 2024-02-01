@@ -1,10 +1,11 @@
 import Head from "next/head";
-import { getCollections } from "@lib/mongo/collections";
-import Layout from "@public/components/Layout";
-import Description from "@public/components/Description";
-import { arrayOfPages, indexOfSelections } from "@public/constants/constants";
+import { getCollections } from "../../../lib/mongo/collections";
+import Layout from "shared/components/Layout";
+import Description from "shared/components/Description";
+import { arrayOfPages, indexOfSelections } from "shared/lib/constants";
+import React from "react";
 
-export default function DescriptionPage({ title, selectionData }) {
+export default function DescriptionPage({ title, descriptionData }) {
   return (
     <div className="mobile-adjust centralBody">
       <Layout>
@@ -12,7 +13,7 @@ export default function DescriptionPage({ title, selectionData }) {
           <title>{title}</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <Description selectionData={selectionData} />
+        <Description descriptionData={descriptionData} />
       </Layout>
     </div>
   );
@@ -29,23 +30,28 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const props = {};
+  const props: pagesProps = {
+    title: "",
+    descriptionData: {},
+  };
 
   props.title = params.description.split("-").join(" ").toLocaleUpperCase();
 
-  const { collection } = await getCollections(params.selection);
+  const { collection } = await getCollections();
   if (!collection) {
     throw new Error(`Failed to fetch ${params.selection}`);
   }
 
-  if(!collection[0]){
-    props.selectionData = { description: [] };
+  if (!collection[0]) {
+    props.descriptionData = { description: [] };
     return {
       props: props,
     };
   }
   delete collection[0]["_id"];
-  props.selectionData = collection[0][params.selection][params.description];
+  props.descriptionData = collection[0][params.selection][params.description];
+
+  console.log(props.descriptionData)
 
   return {
     props: props,

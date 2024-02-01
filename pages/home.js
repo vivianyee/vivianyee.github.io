@@ -1,5 +1,5 @@
-import { subHeadings } from "../public/constants/constants";
-import Selection from "@public/components/Selection";
+import { subHeadings } from "../shared/lib/constants";
+import Selection from "shared/components/Selection";
 
 export default function TitleScreen() {
   return (<Selection title={"Vivian Yee"} selections={subHeadings}/>);

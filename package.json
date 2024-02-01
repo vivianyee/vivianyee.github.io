@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
+    "@types/node": "20.11.15",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "ignore-styles": "^5.0.1",
