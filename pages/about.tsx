@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getCollections } from "../lib/mongo/collections";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import Layout from "shared/components/Layout";
+import Layout from "@shared/components/Layout";
 
 export default function About({ about }) {
   const src = "https://vivianyeebucket.s3.amazonaws.com/me.jpg";

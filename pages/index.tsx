@@ -1,6 +1,7 @@
 import Head from "next/head";
-import TitleScreen from "./home";
-import Layout from "shared/components/Layout";
+import Layout from "@shared/components/Layout";
+import { subHeadings } from "@shared/lib/constants";
+import Selection from "@shared/components/Selection";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         className="mobile-adjust centralBody"
       >
         <Layout>
-          <TitleScreen />
+          <Selection title={"Vivian Yee"} selections={subHeadings}/>
         </Layout>
       </div>
     </>
