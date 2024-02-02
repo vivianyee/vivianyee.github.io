@@ -6,7 +6,7 @@ import React from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div style={{position: "relative", minHeight: "100vh"}}>
+    <div className="relative min-h-screen:">
       <div className="App">
         <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} />

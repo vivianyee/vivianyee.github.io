@@ -23,33 +23,24 @@ export default function Footer() {
   });
 
   return (
-    <div
-      className="footer"
-      style={{
-        position: "absolute",
-        bottom: 0,
-        width: "100%",
-        height: "5rem",
-      }}
-    >
+    <div className="pb-20 absolute bottom-0 w-[100%] h-20">
       <a href="../vivian-resume.pdf" className="center" download>
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
           onHoverEnd={() => setHoverFoot(false)}
-          style={{
-            cursor: "pointer",
-            textAlign: "center",
-          }}
+          className="cursor-pointer align-middle"
         >
           <Image
-            className="fly footer"
+            className="h-32 w-32 absolute bottom-8"
             alt="OOPS"
             style={{
-              position: "absolute",
               left: `${imagePosition}px`,
-              bottom: "30px",
             }}
-            src={`${process.env.NEXT_PUBLIC_AWS_URL}/${pathToAnimation[currentTab]}.00${image}.png`}
+            src={
+              !hoverFoot && pathToAnimation[currentTab]
+                ? `${process.env.NEXT_PUBLIC_AWS_URL}/${pathToAnimation[currentTab]}.00${image}.png`
+                : `${process.env.NEXT_PUBLIC_AWS_URL}/click.png`
+            }
             width={150}
             height={150}
           />

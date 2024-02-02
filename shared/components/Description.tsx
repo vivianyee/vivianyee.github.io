@@ -7,42 +7,18 @@ export default function Description({ descriptionData }) {
   return (
     <div>
       <motion.h4
-        style={{
-          width: "fit-content",
-          cursor: "pointer",
-        }}
+        className="w-fit mb-5 cursor-pointer"
         onClick={() => router.back()}
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
       >
         &lt; Back
       </motion.h4>
-      <h3
-        className="heading"
-        style={{
-          paddingBottom: "10px",
-          margin: "0",
-        }}
-      >
-        {descriptionData.dataName}
-      </h3>
-      <div
-        className="description-subheadings"
-        style={{
-          borderBottom: "1px solid white",
-          paddingBottom: "20px",
-          marginBottom: "20px",
-        }}
-      >
+      <h3 className="text-4xl pb-3 m-0">{descriptionData.dataName}</h3>
+      <div className="text-lg border-white border-b pb-5 mb-5">
         {descriptionData.summary}
       </div>
-      <div
-        className="description-subheadings"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className="text-lg flex justify-between">
         <h4>{descriptionData.position}</h4>
         <h4>
           <i>{descriptionData.date}</i>
@@ -50,7 +26,7 @@ export default function Description({ descriptionData }) {
       </div>
       {descriptionData.description.map((data) => {
         return (
-          <h4 style={{ margin: "5px" }} className="about-paragraph" key={data}>
+          <h4 className="m-1 text-base" key={data}>
             &emsp; {data}
             <br />
           </h4>
@@ -64,7 +40,7 @@ export default function Description({ descriptionData }) {
           INSTAGRAM
         </a>
       )} */}
-      <h4 className="description-subheadings center">
+      <h4 className="text-base m-4 center">
         - <b>{descriptionData.tech}</b> -
       </h4>
     </div>

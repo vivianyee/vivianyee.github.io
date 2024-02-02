@@ -11,10 +11,7 @@ export default function Selection({ title, selections }) {
     <div>
       {title !== "Vivian Yee" && (
         <motion.h4
-          style={{
-            width: "fit-content",
-            cursor: "pointer",
-          }}
+          className="w-fit mb-5 cursor-pointer"
           onClick={() => router.back()}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
@@ -22,32 +19,14 @@ export default function Selection({ title, selections }) {
           &lt; Back
         </motion.h4>
       )}
-      <h3
-        className="heading"
-        style={{
-          borderBottom: "1px solid white",
-          paddingBottom: "20px",
-          marginBottom: "20px",
-          marginTop: "0",
-        }}
-      >
+      <h3 className="text-5xl border-b-2 border-white pb-5 mb-5 mt-0">
         {title}
       </h3>
-      <div style={{ width: "90%" }}>
+      <div>
         {selections.map((heading) => (
-          <Link
-            key={heading.url}
-            href={heading.url}
-            style={{ textDecoration: "none", color: "black" }}
-          >
+          <Link key={heading.url} href={heading.url} className="no-underline">
             <motion.h2
-              style={{
-                width: "fit-content",
-                color: "white",
-                padding: "15px 15px 15px 0",
-                cursor: "pointer",
-                margin: "0",
-              }}
+              className="w-fit text-white p-4 pl-0 cursor-pointer m-0"
               onHoverStart={() => setHoverHeading(heading.name)}
               onHoverEnd={() => setHoverHeading("")}
               whileHover={{ scale: 1.2 }}
