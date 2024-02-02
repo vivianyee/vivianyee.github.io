@@ -82,7 +82,7 @@ export default function About({ about }) {
           <div className="justify-center flex m-4">
             {links.map((x) => {
               return (
-                <a className="pl-6 pr-6 text-xl md:text-3xl" href={x.href}>
+                <a className="pl-6 pr-6 text-xl md:text-3xl" href={x.href}  key={x.href} >
                   {x.tag}
                 </a>
               );
