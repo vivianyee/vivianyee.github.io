@@ -1,5 +1,5 @@
-import "../styles/globals.css";
-import "../styles/App.css";
+import "@styles/globals.css";
+import "@styles/App.css";
 import Footer from "@shared/components/Footer";
 import { AnimatePresence } from 'framer-motion'
 import React from "react";

@@ -12,6 +12,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_AWS_URL: process.env.NEXT_PUBLIC_AWS_URL
+  }
 }
 
 module.exports = nextConfig

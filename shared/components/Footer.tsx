@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 import { pathToAnimation } from "../lib/constants";
 
 export default function Footer() {
-  const url = "https://vivianyeebucket.s3.amazonaws.com";
-
   const { asPath } = useRouter();
   const currentTab = asPath.split("/")[1];
   const [hoverFoot, setHoverFoot] = useState(false);
@@ -20,7 +18,7 @@ export default function Footer() {
         imagePosition + 5 >= window.innerWidth
           ? setImagePosition(-160)
           : setImagePosition(imagePosition + 5);
-      }, 50);
+      }, 60);
     }
   });
 
@@ -51,7 +49,7 @@ export default function Footer() {
               left: `${imagePosition}px`,
               bottom: "30px",
             }}
-            src={`${url}/${pathToAnimation[currentTab]}.00${image}.png`}
+            src={`${process.env.NEXT_PUBLIC_AWS_URL}/${pathToAnimation[currentTab]}.00${image}.png`}
             width={150}
             height={150}
           />
