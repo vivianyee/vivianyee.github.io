@@ -27,7 +27,7 @@ export default function Description({ descriptionData }) {
           </div>
         </div>
       </div>
-      <div className="overflow-y-scroll description border-white border-t border-b p-1">
+      <div className="overflow-y-scroll description border-white border-t border-b pt-2 pb-2">
         {descriptionData.description.map((data) => {
           return (
             <h4 className="m-1 text-xs md:text-base" key={data}>

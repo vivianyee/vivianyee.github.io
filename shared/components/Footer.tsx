@@ -23,8 +23,8 @@ export default function Footer() {
   });
 
   return (
-    <div className="pb-20 absolute bottom-0 w-[100%] h-20 mb-10 md:mb-0">
-      <a href="../vivian-resume.pdf" className="center" download>
+    <div className="pb-20 absolute bottom-0 w-[100%] h-20 mb-0">
+      <a href="/" className="center">
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
           onHoverEnd={() => setHoverFoot(false)}

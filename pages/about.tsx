@@ -4,9 +4,49 @@ import { getCollections } from "../lib/mongo/collections";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Layout from "@shared/components/Layout";
+import {
+  FileTextOutlined,
+  GithubOutlined,
+  LinkedinOutlined,
+} from "@ant-design/icons";
+import { useState } from "react";
 
 export default function About({ about }) {
   const router = useRouter();
+  const [hover, setHover] = useState("");
+
+  const links = [
+    {
+      href: "https://github.com/vivianyee/vivianyee.github.io",
+      tag: (
+        <GithubOutlined
+          onMouseEnter={() => setHover("github")}
+          onMouseLeave={() => setHover("")}
+          spin={hover === "github"}
+        />
+      ),
+    },
+    {
+      href: "https://www.linkedin.com/in/vivian-yee/",
+      tag: (
+        <LinkedinOutlined
+          onMouseEnter={() => setHover("linkedin")}
+          onMouseLeave={() => setHover("")}
+          spin={hover === "linkedin"}
+        />
+      ),
+    },
+    {
+      href: "../vivian-resume.pdf",
+      tag: (
+        <FileTextOutlined
+          onMouseEnter={() => setHover("resume")}
+          onMouseLeave={() => setHover("")}
+          spin={hover === "resume"}
+        />
+      ),
+    },
+  ];
 
   return (
     <div className="centralBody">
@@ -28,13 +68,23 @@ export default function About({ about }) {
           {/* <div style={{position:'relative', width:"10vw", height:"10vw"}}>
         <Image loader={()=>src} fill={true} src={src}/>
       </div> */}
-          <div className="overflow-y-scroll description border-white border-t border-b p-1">
+          <div className="overflow-y-scroll description border-white border-t border-b pt-2 pb-2">
             {about.map((data) => {
               return (
                 <h4 className="m-1 text-xs md:text-base" key={data}>
                   &emsp; {data}
                   <br />
                 </h4>
+              );
+            })}
+          </div>
+
+          <div className="justify-center flex m-4">
+            {links.map((x) => {
+              return (
+                <a className="pl-6 pr-6 text-xl md:text-3xl" href={x.href}>
+                  {x.tag}
+                </a>
               );
             })}
           </div>
