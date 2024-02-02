@@ -15,28 +15,30 @@ export default function About({ about }) {
           <title>ABOUT</title>
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
-        <motion.h4
-          className="text-sm md:text-base w-fit mb-2 md:mb-5 cursor-pointer"
-          onClick={() => router.back()}
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-        >
-          &lt; Back
-        </motion.h4>
-        <h3 className="text-2xl md:text-4xl border-white border-b pb-3 md:pb-5 mb-3 md:mb-5 mt-0">
-          Vivian Yee
-        </h3>
-        {/* <div style={{position:'relative', width:"10vw", height:"10vw"}}>
+        <div className="max-h-[70vh] inline-flex flex-col">
+          <motion.h4
+            className="text-sm md:text-base w-fit mb-2 md:mb-5 cursor-pointer"
+            onClick={() => router.back()}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+          >
+            &lt; Back
+          </motion.h4>
+          <h3 className="text-2xl md:text-4xl mb-3 md:mb-5 mt-0">Vivian Yee</h3>
+          {/* <div style={{position:'relative', width:"10vw", height:"10vw"}}>
         <Image loader={()=>src} fill={true} src={src}/>
       </div> */}
-        {about.map((data) => {
-          return (
-            <h4 className="m-1 text-xs md:text-base" key={data}>
-              &emsp; {data}
-              <br />
-            </h4>
-          );
-        })}
+          <div className="overflow-y-scroll description border-white border-t border-b p-1">
+            {about.map((data) => {
+              return (
+                <h4 className="m-1 text-xs md:text-base" key={data}>
+                  &emsp; {data}
+                  <br />
+                </h4>
+              );
+            })}
+          </div>
+        </div>
       </Layout>
     </div>
   );

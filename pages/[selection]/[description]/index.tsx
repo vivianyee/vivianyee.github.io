@@ -8,7 +8,7 @@ import { pagesProps } from "@shared/lib/types";
 
 export default function DescriptionPage({ title, descriptionData }) {
   return (
-    <div className="mobile-adjust centralBody">
+    <div className="centralBody">
       <Layout>
         <Head>
           <title>{title}</title>

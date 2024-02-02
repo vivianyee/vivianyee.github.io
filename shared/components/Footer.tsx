@@ -23,7 +23,7 @@ export default function Footer() {
   });
 
   return (
-    <div className="pb-20 absolute bottom-0 w-[100%] h-20">
+    <div className="pb-20 absolute bottom-0 w-[100%] h-20 mb-10 md:mb-0">
       <a href="../vivian-resume.pdf" className="center" download>
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
@@ -31,7 +31,7 @@ export default function Footer() {
           className="cursor-pointer align-middle"
         >
           <Image
-            className="h-32 w-32 absolute bottom-8"
+            className="h-20 w-20 md:h-32 md:w-32 absolute bottom-8"
             alt="OOPS"
             style={{
               left: `${imagePosition}px`,

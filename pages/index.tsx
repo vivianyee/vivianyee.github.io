@@ -10,11 +10,9 @@ export default function Home() {
         <title>Vivian Yee</title>
         <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
       </Head>
-      <div
-        className="mobile-adjust centralBody"
-      >
+      <div className="centralBody">
         <Layout>
-          <Selection title={"Vivian Yee"} selections={subHeadings}/>
+          <Selection title={"Vivian Yee"} selections={subHeadings} />
         </Layout>
       </div>
     </>

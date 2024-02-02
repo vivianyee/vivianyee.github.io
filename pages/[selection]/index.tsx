@@ -7,7 +7,7 @@ import { pagesProps } from "@shared/lib/types";
 
 export default function SelectionPage({ title, selectionData }) {
   return (
-    <div className="mobile-adjust centralBody">
+    <div className="centralBody">
       <Layout>
         <Head>
           <title>{title}</title>
