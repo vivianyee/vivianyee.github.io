@@ -29,9 +29,9 @@ h2 {
   display: flex;
   justify-content: center;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .centralBody{
-    width: 90%;
+    width: 95%;
   }
   .no_highlights{
     -webkit-tap-highlight-color: transparent;
@@ -42,10 +42,10 @@ h2 {
     -ms-user-select: none;
     user-select: none;
   }
-  .mobile-adjust{
+  /* .mobile-adjust{
     padding-bottom: 80px;
-  }
+  } */
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }
