@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ArrowLeftOutlined, LeftOutlined } from "@ant-design/icons";
+import { LeftOutlined } from "@ant-design/icons";
 
 export default function Selection({ title, selections }) {
   const router = useRouter();
@@ -34,7 +34,7 @@ export default function Selection({ title, selections }) {
               whileTap={{ scale: 0.8 }}
             >
               
-              &emsp; {heading.name} {hoverHeading === heading.name && <ArrowLeftOutlined className="justify-center align-middle"/>}
+              &emsp; {heading.name} {hoverHeading === heading.name && <LeftOutlined className="justify-center align-middle pb-1"/>}
             </motion.h2>
           </Link>
         ))}
