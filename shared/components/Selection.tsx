@@ -12,7 +12,7 @@ export default function Selection({ title, selections }) {
     <div>
       {title !== "Vivian Yee" && (
         <motion.h4
-          className="text-sm md:text-base w-fit mb-2 md:mb-5 cursor-pointer"
+          className="text-sm md:text-base w-fit mb-3 md:mb-5 cursor-pointer"
           onClick={() => router.back()}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}

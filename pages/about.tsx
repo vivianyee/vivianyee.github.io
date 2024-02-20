@@ -13,38 +13,19 @@ import { useState } from "react";
 
 export default function About({ about }) {
   const router = useRouter();
-  const [hover, setHover] = useState("");
 
   const links = [
     {
       href: "https://github.com/vivianyee/vivianyee.github.io",
-      tag: (
-        <GithubOutlined
-          onMouseEnter={() => setHover("github")}
-          onMouseLeave={() => setHover("")}
-          spin={hover === "github"}
-        />
-      ),
+      tag: <GithubOutlined />,
     },
     {
       href: "https://www.linkedin.com/in/vivian-yee/",
-      tag: (
-        <LinkedinOutlined
-          onMouseEnter={() => setHover("linkedin")}
-          onMouseLeave={() => setHover("")}
-          spin={hover === "linkedin"}
-        />
-      ),
+      tag: <LinkedinOutlined />,
     },
     {
       href: "../vivian-resume.pdf",
-      tag: (
-        <FileTextOutlined
-          onMouseEnter={() => setHover("resume")}
-          onMouseLeave={() => setHover("")}
-          spin={hover === "resume"}
-        />
-      ),
+      tag: <FileTextOutlined />,
     },
   ];
 
@@ -82,9 +63,15 @@ export default function About({ about }) {
           <div className="justify-center flex m-4">
             {links.map((x) => {
               return (
-                <a className="pl-6 pr-6 text-xl md:text-3xl" href={x.href}  key={x.href} >
+                <motion.a
+                  className="pl-6 pr-6 text-xl md:text-3xl"
+                  href={x.href}
+                  key={x.href}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                >
                   {x.tag}
-                </a>
+                </motion.a>
               );
             })}
           </div>

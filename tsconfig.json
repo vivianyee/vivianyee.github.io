@@ -21,7 +21,8 @@
         "@public/*": ["./public/*"],
         "@lib/*": ["./lib/*"],
         "@shared/*": ["./shared/*"],
-        "@styles/*": ["./styles/*"]
+        "@styles/*": ["./styles/*"],
+        "@utils/*": ["./utils/*"]
     }
   },
   "include": [

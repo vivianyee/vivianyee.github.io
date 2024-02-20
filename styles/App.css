@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@300&display=swap");
 .App {
   display: flex;
   justify-content: center;
@@ -7,16 +7,69 @@
 }
 
 .css-dev-only-do-not-override-diro6f {
-  font-family: 'Noto Sans', sans-serif;
-  font-family: 'Roboto Mono', monospace;
-  color:white;}
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+}
 
 .app-subheading {
-	color: white;
-	font-size: 2em;
-  cursor: pointer; 
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
 }
 
 .start {
   white-space: pre-line;
+}
+
+.ribbon {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: -350px;
+  animation: drop forwards 1.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: -25px;
+    border-left: 25px solid white;
+    border-right: 25px solid white;
+    border-bottom: 25px solid transparent;
+  }
+}
+.ribbon:hover {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  height: 60px;
+}
+.ribbon:not(:hover) {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .ribbon {
+    height: 80px;
+  }
+  .ribbon:hover {
+    height: 100px;
+  }
+  .ribbon:not(:hover) {
+    height: 80px;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -350px;
+  }
+  100% {
+    top: 0;
+  }
 }

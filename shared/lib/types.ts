@@ -3,3 +3,10 @@ export type pagesProps = {
     selectionData?: Array<any>;
     descriptionData?: object;
 }
+
+export type FormData = {
+    name: string;
+    email: string;
+    text: string;
+  };
+  

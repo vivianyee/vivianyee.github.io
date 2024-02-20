@@ -37,11 +37,25 @@ body {
 h2 {
   font-size: 1.5rem;
 }
+
 .center{
   display: flex;
   justify-content: center;
 }
+
+.ant-drawer-body, .ant-drawer-header{
+  background-color: #18191A;
+}
+.ant-drawer-title{
+  font-size: 1rem !important;
+  color: white !important;
+  font-weight: 0;
+}
+
 @media only screen and (max-width: 768px) {
+  .ant-drawer-title{
+    font-size: 0.875rem !important;
+  }
   .description::-webkit-scrollbar { 
     width: 1px;
   }
