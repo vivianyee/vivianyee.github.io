@@ -49,8 +49,12 @@
 .ribbon:not(:hover) {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition-duration: 150ms;
   height: 50px;
+}
+
+.ant-drawer-body {
+  padding-top: 0px !important;
 }
 
 @media (min-width: 768px) {

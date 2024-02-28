@@ -3,23 +3,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { LeftOutlined } from "@ant-design/icons";
+import Subheading from "./Subheading";
 
 export default function Selection({ title, selections }) {
-  const router = useRouter();
   const [hoverHeading, setHoverHeading] = useState("");
 
   return (
     <div>
-      {title !== "Vivian Yee" && (
-        <motion.h4
-          className="text-sm md:text-base w-fit mb-3 md:mb-5 cursor-pointer"
-          onClick={() => router.back()}
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-        >
-          &lt; Back
-        </motion.h4>
-      )}
+      <Subheading />
       <h3 className="text-3xl md:text-5xl border-b-2 border-white pb-5 mb-5 mt-0">
         {title}
       </h3>
@@ -33,8 +24,10 @@ export default function Selection({ title, selections }) {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
             >
-              
-              &emsp; {heading.name} {hoverHeading === heading.name && <LeftOutlined className="justify-center align-middle pb-1"/>}
+              &emsp; {heading.name}{" "}
+              {hoverHeading === heading.name && (
+                <LeftOutlined className="justify-center align-middle pb-1" />
+              )}
             </motion.h2>
           </Link>
         ))}

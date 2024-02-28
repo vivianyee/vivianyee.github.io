@@ -8,5 +8,7 @@ export type FormData = {
     name: string;
     email: string;
     text: string;
+    guest: boolean;
+    date: Date;
   };
   

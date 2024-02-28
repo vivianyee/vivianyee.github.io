@@ -11,6 +11,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    minimumCacheTTL: 60,
   },
   env: {
     NEXT_PUBLIC_AWS_URL: process.env.NEXT_PUBLIC_AWS_URL

@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CloseOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Drawer, Space } from "antd";
 import Image from "next/image";
 import { FormData } from "@shared/lib/types";
+import { GuestContext } from "../../pages/_app";
+import Link from "next/link";
 
 export default function Header() {
+  const guestContext = useContext(GuestContext);
   const defaultForm: FormData = {
     name: "",
     email: "",
     text: "",
+    guest: false,
+    date: new Date(),
   };
 
   const [open, setOpen] = useState<boolean>(false);
@@ -23,12 +28,28 @@ export default function Header() {
       name: form.name,
       email: form.email,
       text: form.text,
+      date: form.date,
     };
+
+    if (form.guest) {
+      guestContext.setSubmitForm(guestContext.submitForm + 1);
+      try {
+        let res = await fetch("http://localhost:3000/api/guestlist", {
+          method: "POST",
+          body: JSON.stringify(body),
+        });
+        res = await res.json();
+      } catch {
+        console.log("error");
+      }
+    }
+
     setSending(true);
     await fetch("/api/email", {
       method: "POST",
       body: JSON.stringify(body),
     });
+
     setSending(false);
     setViewForm(false);
     setForm(defaultForm);
@@ -36,10 +57,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="text-lg py-3 absolute center top-0 w-[100%] cursor-pointer">
-        <motion.h3 onClick={() => setOpen(true)} className="md:w-2/4 w-11/12">
-          <div className="ribbon"></div>
-        </motion.h3>
+      <div className="text-lg py-3 absolute center top-0 w-[100%] cursor-pointer ">
+        <div className="md:w-2/4 justify-between flex w-11/12">
+          <motion.h3 onClick={() => setOpen(true)} className="md:w-2/4 w-11/12">
+            <div className="ribbon"></div>
+          </motion.h3>
+        </div>
       </div>
       <Drawer
         title=" "
@@ -66,7 +89,7 @@ export default function Header() {
           <>
             {sending ? (
               <div className="center pt-6 w-full flex flex-col items-center">
-                <h2 className="pb-24 font-medium">Sending email...</h2>
+                <h2 className="pb-24 font-medium">Sending message...</h2>
                 <LoadingOutlined className="text-3xl" />
               </div>
             ) : (
@@ -125,6 +148,20 @@ export default function Header() {
                     className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
                   ></textarea>
                 </div>
+                <div className="mb-5 w-full md:w-2/4 flex">
+                  <input
+                    type="checkbox"
+                    onChange={(e) =>
+                      setForm({ ...form, guest: e.target.checked })
+                    }
+                  />
+                  <label
+                    htmlFor="email"
+                    className="pl-3 block text-base font-medium"
+                  >
+                    Would you like to post this in the Guest Book?
+                  </label>
+                </div>
                 <button
                   type="submit"
                   className="w-full md:w-2/4 transition-all hover:bg-slate-400 rounded-md bg-white my-3 py-2 px-4 text-base font-semibold text-black outline-none"
@@ -136,7 +173,7 @@ export default function Header() {
           </>
         ) : (
           <div className="w-full flex flex-col items-center justify-center">
-            <h2 className="pb-4 pt-6 font-medium">Email sent!</h2>
+            <h2 className="pb-4 pt-6 font-medium">Message sent!</h2>
             <Image
               alt="OOPS"
               src={`${process.env.NEXT_PUBLIC_AWS_URL}/click.png`}
@@ -147,7 +184,7 @@ export default function Header() {
               onClick={() => setViewForm(true)}
               className="mt-4 w-full md:w-1/4 transition-all hover:bg-slate-400 rounded-md bg-white py-2 px-4 text-base font-semibold text-black outline-none"
             >
-              Send another email
+              Send another message
             </button>
           </div>
         )}

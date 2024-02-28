@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { pathToAnimation } from "../lib/constants";
+import Link from "next/link";
 
 export default function Footer() {
   const { asPath } = useRouter();
-  const currentTab = asPath.split("/")[1];
+  const currentTab =
+    asPath.split("/")[1] === "guestlist" ? "about" : asPath.split("/")[1];
   const [hoverFoot, setHoverFoot] = useState(false);
   const [image, setImage] = useState(1);
   const [imagePosition, setImagePosition] = useState(-160);
@@ -24,7 +26,7 @@ export default function Footer() {
 
   return (
     <div className="pb-20 absolute bottom-0 w-[100%] h-20 mb-0">
-      <a href="/" className="center">
+      <Link href="/guestlist" className="center">
         <motion.div
           onHoverStart={() => setHoverFoot(true)}
           onHoverEnd={() => setHoverFoot(false)}
@@ -36,6 +38,7 @@ export default function Footer() {
             style={{
               left: `${imagePosition}px`,
             }}
+            quality={10}
             src={
               !hoverFoot && pathToAnimation[currentTab]
                 ? `${process.env.NEXT_PUBLIC_AWS_URL}/${pathToAnimation[currentTab]}.00${image}.png`
@@ -45,7 +48,7 @@ export default function Footer() {
             height={150}
           />
         </motion.div>
-      </a>
+      </Link>
     </div>
   );
 }
