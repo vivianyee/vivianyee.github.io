@@ -5,7 +5,6 @@ import { Drawer, Space } from "antd";
 import Image from "next/image";
 import { FormData } from "@shared/lib/types";
 import { GuestContext } from "../../pages/_app";
-import Link from "next/link";
 
 export default function Header() {
   const guestContext = useContext(GuestContext);

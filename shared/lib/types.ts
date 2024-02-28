@@ -1,14 +1,13 @@
 export type pagesProps = {
-    title: string,
-    selectionData?: Array<any>;
-    descriptionData?: object;
-}
+  title: string;
+  selectionData?: Array<any>;
+  descriptionData?: object;
+};
 
 export type FormData = {
-    name: string;
-    email: string;
-    text: string;
-    guest: boolean;
-    date: Date;
-  };
-  
+  name: string;
+  email: string;
+  text: string;
+  guest: boolean;
+  date: Date;
+};

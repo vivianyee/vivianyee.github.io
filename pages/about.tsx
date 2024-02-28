@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { getCollections } from "../lib/mongo/collections";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 import Layout from "@shared/components/Layout";
 import {
   FileTextOutlined,
@@ -12,8 +11,6 @@ import {
 import Subheading from "@shared/components/Subheading";
 
 export default function About({ about }) {
-  const router = useRouter();
-
   const links = [
     {
       href: "https://github.com/vivianyee/vivianyee.github.io",
@@ -37,12 +34,20 @@ export default function About({ about }) {
           <link rel="icon" href="https://i.imgur.com/YuNLXe1.png" />
         </Head>
         <div className="max-h-[70vh] inline-flex flex-col">
-          <Subheading/>
-          <h3 className="text-2xl md:text-4xl mb-3 md:mb-5 mt-0">Vivian Yee</h3>
-          {/* <div style={{position:'relative', width:"10vw", height:"10vw"}}>
-        <Image loader={()=>src} fill={true} src={src}/>
-      </div> */}
-          <div className="overflow-y-scroll description border-white border-t border-b pt-2 pb-2">
+          <Subheading />
+          <div className="flex justify-between align-middle">
+            <h3 className="text-2xl md:text-4xl mt-0">Vivian Yee</h3>
+            <div className="h-10 w-10 md:h-16 md:w-16 relative">
+              <Image
+                className="text-2xl md:text-4xl mb-3 md:mb-5 mt-0 rounded-full"
+                loader={() => `${process.env.NEXT_PUBLIC_AWS_URL}/me.jpg`}
+                fill={true}
+                src={`${process.env.NEXT_PUBLIC_AWS_URL}/me.jpg`}
+                alt={""}
+              />
+            </div>
+          </div>
+          <div className="overflow-y-scroll description border-white border-t border-b mt-2 mb-2 pt-2 pb-2">
             {about.map((data) => {
               return (
                 <h4 className="m-1 text-xs md:text-base" key={data}>

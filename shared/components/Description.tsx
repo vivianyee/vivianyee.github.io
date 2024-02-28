@@ -1,6 +1,3 @@
-import { useRouter } from "next/router";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import Subheading from "./Subheading";
 
 export default function Description({ descriptionData }) {

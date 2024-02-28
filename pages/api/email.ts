@@ -18,6 +18,10 @@ export default async function handler(
 
   sgMail
     .send(msg)
-    .then(() => res.status(201).json({ message: `Email has been sent from ${name} (${email})` }))
+    .then(() =>
+      res
+        .status(201)
+        .json({ message: `Email has been sent from ${name} (${email})` })
+    )
     .catch((err) => res.status(500).json({ error: err }));
 }
