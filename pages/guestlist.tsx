@@ -57,7 +57,7 @@ export default function GuestList({ allGuests }) {
             })}
           </div>
           <h4 className="text-sm md:text-lg py-3 md:pb-3 text-center">
-            You've recently posted {guestContext.submitForm} message
+            You&apos;ve recently posted {guestContext.submitForm} message
             {guestContext.submitForm !== 1 && "s"}!
           </h4>
         </div>
