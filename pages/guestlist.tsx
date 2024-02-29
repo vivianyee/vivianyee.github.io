@@ -12,7 +12,7 @@ export default function GuestList() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${process.env.ENV_URL}/api/guestlist`, {
+    fetch(`/api/guestlist`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
