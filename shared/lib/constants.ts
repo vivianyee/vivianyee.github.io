@@ -15,6 +15,7 @@ export const pathToAnimation = {
 };
 
 export const indexOfSelections = {
+  "teachable": "experiences",
   "rocket-mortgage": "experiences",
   better: "experiences",
   "better-internship": "experiences",
@@ -27,6 +28,7 @@ export const indexOfSelections = {
 };
 
 export const arrayOfPages = [
+  "teachable",
   "rocket-mortgage",
   "better",
   "better-internship",
