@@ -15,10 +15,9 @@ export const pathToAnimation = {
 };
 
 export const indexOfSelections = {
-  "bubble": "experiences",
   "teachable": "experiences",
   "rocket-mortgage": "experiences",
-  better: "experiences",
+  "better-internship": "experiences",
   "extracurricular-activities": "extras",
   hobbies: "extras",
   travels: "extras",
@@ -28,10 +27,9 @@ export const indexOfSelections = {
 };
 
 export const arrayOfPages = [
-  "bubble",
   "teachable",
   "rocket-mortgage",
-  "better",
+  "better-internship",
   "extracurricular-activities",
   "hobbies",
   "travels",
